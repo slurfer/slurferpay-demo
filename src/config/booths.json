@@ -45,7 +45,7 @@
         {
             "name": "Střediskový hospodář",
             "link": "strediskovy_hospodar",
-            "offer": [],
+            "offer": [{ "name": "Účastnický poplatek", "price": 50 }],
             "want": []
         }
     ]
