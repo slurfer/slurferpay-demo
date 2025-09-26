@@ -19,7 +19,6 @@ export default function BoothPage() {
     function transactionClick(amount: number) {
         setAmount(amount);
         setScanning(true);
-        alert('Transaction ' + amount); // TODO remove
     }
 
     if (!booth) {
