@@ -3,7 +3,7 @@ import { Container } from '@mui/system';
 import config from '../config/booths.json';
 import { Booth } from '../types/BoothTypes';
 import BoothCard from '../components/BoothCard';
-import ItemButton from '../components/ItemButton';
+import ItemLinkButton from '../components/ItemButton/ItemLinkButton';
 
 export default function Home() {
     const booths: Booth[] = config.booths;
@@ -31,17 +31,25 @@ export default function Home() {
                 </div>
             ))}
 
-            <ItemButton
+            <ItemLinkButton
                 name="Show balance"
                 link="showBalance"
                 type="tool"
             />
             <br />
-            <ItemButton name="Init card" link="init" type="tool" />
+            <ItemLinkButton
+                name="Init card"
+                link="init"
+                type="tool"
+            />
             <br />
-            <ItemButton name="Add money" link="addMoney" type="add" />
+            <ItemLinkButton
+                name="Add money"
+                link="addMoney"
+                type="add"
+            />
             <br />
-            <ItemButton
+            <ItemLinkButton
                 name="Subs money"
                 link="subsMoney"
                 type="subs"

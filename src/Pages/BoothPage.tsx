@@ -2,10 +2,14 @@ import { Container } from '@mui/system';
 import { useNavigate, useParams } from 'react-router-dom';
 import config from '../config/booths.json';
 import type { Booth } from '../types/BoothTypes';
-import ItemButton from '../components/ItemButton';
 import BackButton from '../components/BackButton';
+import { useState } from 'react';
+import ItemLinkButton from '../components/ItemButton/ItemLinkButton';
 
 export default function BoothPage() {
+    const [amount, setAmount] = useState(0);
+    const [scanning, setScanning] = useState(false);
+
     const nav = useNavigate();
     const { boothLink } = useParams();
     const booths: Booth[] = config.booths;
@@ -25,7 +29,7 @@ export default function BoothPage() {
 
             <h2>Nakupuje:</h2>
             {booth.want.map((item) => (
-                <ItemButton
+                <ItemLinkButton
                     key={item.name}
                     name={`${item.name}`}
                     link={`/`}
@@ -34,7 +38,7 @@ export default function BoothPage() {
             ))}
             <h2>Prodává:</h2>
             {booth.offer.map((item) => (
-                <ItemButton
+                <ItemLinkButton
                     key={item.name}
                     name={`${item.name}`}
                     link={`/`}

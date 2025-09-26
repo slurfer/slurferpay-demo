@@ -1,16 +1,12 @@
-import { useNavigate } from 'react-router-dom';
-
 export default function ItemButton({
     name,
-    link,
     type,
+    onClick,
 }: {
     name: string;
-    link: string;
     type: 'tool' | 'subs' | 'add';
+    onClick: () => void;
 }) {
-    const nav = useNavigate();
-
     const bgColor =
         type === 'tool'
             ? 'gray'
@@ -36,7 +32,7 @@ export default function ItemButton({
                     marginBottom: 10,
                     marginTop: 10,
                 }}
-                onClick={() => nav(`/${link}`)}
+                onClick={onClick}
             >
                 {name}
             </div>
