@@ -7,7 +7,7 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: slurfer/slurferpay:latest
+  IMAGE_NAME: slurfer/slurferpay-demo:latest
 
 jobs:
   publish:

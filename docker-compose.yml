@@ -2,8 +2,8 @@ services:
   frontend:
     container_name: frontend
     restart: always
-    # image: ghcr.io/slurfer/slurferpay:latest
-    image: slurferpay:latest
+    # image: ghcr.io/slurfer/slurferpay-demo:latest
+    image: slurferpay-demo:latest
     build:
       context: .
       dockerfile: Dockerfile
