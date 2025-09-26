@@ -1,0 +1,52 @@
+{
+    "booths": [
+        {
+            "name": "Potraviny",
+            "link": "potraviny",
+            "offer": [
+                { "name": "Rajče", "price": 300 },
+                { "name": "Paprika", "price": 300 },
+                { "name": "Okurka", "price": 400 }
+            ],
+            "demand": [
+                {
+                    "name": "Skleněné flašky od mlíka",
+                    "price": 2
+                },
+                { "name": "Flašky od alkoholu", "price": 50 }
+            ]
+        },
+        {
+            "name": "Papírnictví",
+            "link": "papirnictvi",
+            "offer": [
+                {
+                    "name": "Papíry",
+                    "price": 100
+                },
+                { "name": "Nůžky", "price": 200 },
+                { "name": "Lepidlo", "price": 150 }
+            ],
+            "demand": []
+        },
+        {
+            "name": "Junshop",
+            "link": "junshop",
+            "offer": [
+                {
+                    "name": "Odborky",
+                    "price": 100
+                },
+                { "name": "Nášivky", "price": 200 },
+                { "name": "Šátky", "price": 150 }
+            ],
+            "demand": []
+        },
+        {
+            "name": "Střediskový hospodář",
+            "link": "strediskovy_hospodar",
+            "offer": [],
+            "demand": []
+        }
+    ]
+}

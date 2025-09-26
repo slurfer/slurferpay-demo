@@ -4,6 +4,7 @@ import AddMoney from './Pages/AddMoney';
 import Home from './Pages/Home';
 import InitCard from './Pages/InitCard';
 import ShowBalance from './Pages/ShowBalance';
+import Booth from './Pages/Booth';
 
 function App() {
     return (
@@ -23,6 +24,10 @@ function App() {
                     <Route
                         path="/subsMoney"
                         element={<AddMoney mode="subs" />}
+                    />
+                    <Route
+                        path="/booth/:boothId"
+                        element={<Booth />}
                     />
                 </Routes>
             </BrowserRouter>

@@ -1,30 +1,19 @@
 import React from 'react';
-import { blue } from '@mui/material/colors';
 import { Container } from '@mui/system';
-import { useNavigate } from 'react-router-dom';
+import config from '../config/booths.json';
+import { Booth } from '../types/booth';
+import BoothCard from '../compoments/BoothCard';
+import ItemButton from '../compoments/ItemButton';
 
 export default function Home() {
-    const nav = useNavigate();
+    const booths: Booth[] = config.booths;
+    const rows = splitToRows(booths, 3);
+
     return (
         <Container maxWidth="sm">
-            {[
-                [
-                    { name: 'Školící centrum', link: '1' },
-                    { name: 'Certifikační agentura', link: '2' },
-                    { name: 'Underground base', link: '3' },
-                ],
-                [
-                    { name: 'Elektro', link: '4' },
-                    { name: 'Smíšené zboží', link: '5' },
-                    { name: 'Chemoshop', link: '6' },
-                ],
-                [
-                    { name: 'Nemocnice', link: '7' },
-                    { name: 'Kostel', link: '8' },
-                ],
-            ].map((row, i) => (
+            {rows.map((row, i) => (
                 <div
-                    key={i}
+                    key={`row-${i}`}
                     style={{
                         display: 'flex',
                         alignContent: 'center',
@@ -34,74 +23,37 @@ export default function Home() {
                     }}
                 >
                     {row.map(({ name, link }) => (
-                        <>
-                            <div
-                                key={link}
-                                style={{
-                                    display: 'flex',
-                                    alignContent: 'center',
-                                    justifyContent: 'center',
-                                    width: '30%',
-                                    margin: '3%',
-                                    padding: '15%',
-                                    boxSizing: 'border-box',
-                                    backgroundColor: blue[900],
-                                    border: '1px solid blue',
-                                    textAlign: 'center',
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                {name}
-                            </div>
+                        <React.Fragment key={link}>
+                            <BoothCard name={name} link={link} />
                             <br />
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
             ))}
 
-            <div
-                style={{
-                    backgroundColor: 'red',
-                    width: '100%',
-                    height: 64,
-                }}
-                onClick={() => nav('/showBalance')}
-            >
-                Show balance
-            </div>
+            <ItemButton
+                name="Show balance"
+                link="showBalance"
+                type="tool"
+            />
             <br />
-            <div
-                style={{
-                    backgroundColor: 'red',
-                    width: '100%',
-                    height: 64,
-                }}
-                onClick={() => nav('/init')}
-            >
-                Init card
-            </div>
+            <ItemButton name="Init card" link="init" type="tool" />
             <br />
-            <div
-                style={{
-                    backgroundColor: 'red',
-                    width: '100%',
-                    height: 64,
-                }}
-                onClick={() => nav('/addMoney')}
-            >
-                Add money
-            </div>
+            <ItemButton name="Add money" link="addMoney" type="add" />
             <br />
-            <div
-                style={{
-                    backgroundColor: 'red',
-                    width: '100%',
-                    height: 64,
-                }}
-                onClick={() => nav('/subsMoney')}
-            >
-                Subs money
-            </div>
+            <ItemButton
+                name="Subs money"
+                link="subsMoney"
+                type="subs"
+            />
         </Container>
     );
+}
+
+function splitToRows<T>(arr: T[], rowLength: number): T[][] {
+    const rows: T[][] = [];
+    for (let i = 0; i < arr.length; i += rowLength) {
+        rows.push(arr.slice(i, i + rowLength));
+    }
+    return rows;
 }
