@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { Sensors } from '@mui/icons-material';
 import { blue } from '@mui/material/colors';
+import BackButton from '../compoments/BackButton';
 
 export default function InitCard() {
     const [scanning, setScanning] = useState(false);
@@ -62,17 +63,7 @@ export default function InitCard() {
                             Hold the card near the reader
                         </Typography>
                     </div>
-                    <Button
-                        style={{ position: 'absolute', bottom: 16 }}
-                        onClick={() =>
-                            window.history.state &&
-                            window.history.state.idx > 0
-                                ? nav(-1)
-                                : nav('/', { replace: true })
-                        }
-                    >
-                        Back
-                    </Button>
+                    <BackButton />
                 </>
             ) : (
                 <>

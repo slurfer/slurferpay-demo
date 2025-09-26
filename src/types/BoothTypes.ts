@@ -1,14 +1,13 @@
 export interface Item {
     name: string;
     price: number;
-    id?: string;
 }
 
 export interface Booth {
     name: string;
     link: string;
     offer: Item[];
-    demand: Item[];
+    want: Item[];
 }
 
 export interface BoothConfig {

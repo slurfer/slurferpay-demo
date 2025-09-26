@@ -3,6 +3,7 @@ import { Check, Clear, Sensors } from '@mui/icons-material';
 import { Avatar, Button, Container, Typography } from '@mui/material';
 import { blue, green, red } from '@mui/material/colors';
 import { decodeNfcRecord, readNfc, writeNfc } from '../Utils/nfc';
+import BackButton from '../compoments/BackButton';
 
 interface IProps {
     amount: number;
@@ -27,7 +28,9 @@ export default function ChangeMoneyAmount({
                         message.records[0]
                     );
                     if (msgText.indexOf(';') < 0)
-                        alert('Malformed card data: ' + msgText); // TODO layout error
+                        alert(
+                            'Malformed card data: ' + msgText
+                        ); // TODO layout error
                     else {
                         const b =
                             parseInt(msgText.split(';')[1]) + amount;
@@ -130,12 +133,7 @@ export default function ChangeMoneyAmount({
                             Current balance scanned, updating...
                         </Typography>
                     </div>
-                    <Button
-                        style={{ position: 'absolute', bottom: 16 }}
-                        onClick={onClose}
-                    >
-                        Back
-                    </Button>
+                    <BackButton />
                 </>
             ) : status === 'finished' ? (
                 <>

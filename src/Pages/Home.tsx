@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@mui/system';
 import config from '../config/booths.json';
-import { Booth } from '../types/booth';
+import { Booth } from '../types/BoothTypes';
 import BoothCard from '../compoments/BoothCard';
 import ItemButton from '../compoments/ItemButton';
 

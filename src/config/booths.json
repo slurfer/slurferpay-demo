@@ -8,7 +8,7 @@
                 { "name": "Paprika", "price": 300 },
                 { "name": "Okurka", "price": 400 }
             ],
-            "demand": [
+            "want": [
                 {
                     "name": "Skleněné flašky od mlíka",
                     "price": 2
@@ -27,7 +27,7 @@
                 { "name": "Nůžky", "price": 200 },
                 { "name": "Lepidlo", "price": 150 }
             ],
-            "demand": []
+            "want": []
         },
         {
             "name": "Junshop",
@@ -40,13 +40,13 @@
                 { "name": "Nášivky", "price": 200 },
                 { "name": "Šátky", "price": 150 }
             ],
-            "demand": []
+            "want": []
         },
         {
             "name": "Střediskový hospodář",
             "link": "strediskovy_hospodar",
             "offer": [],
-            "demand": []
+            "want": []
         }
     ]
 }

@@ -4,6 +4,7 @@ import { decodeNfcRecord, readNfc } from '../Utils/nfc';
 import { Avatar, Button, Container, Typography } from '@mui/material';
 import { Sensors } from '@mui/icons-material';
 import { blue } from '@mui/material/colors';
+import BackButton from '../compoments/BackButton';
 
 export default function ShowBalance() {
     const [scanned, setScanned] = useState(false);
@@ -97,17 +98,7 @@ export default function ShowBalance() {
                             Hold the card near the reader
                         </Typography>
                     </div>
-                    <Button
-                        style={{ position: 'absolute', bottom: 16 }}
-                        onClick={() =>
-                            window.history.state &&
-                            window.history.state.idx > 0
-                                ? nav(-1)
-                                : nav('/', { replace: true })
-                        }
-                    >
-                        Back
-                    </Button>
+                    <BackButton />
                 </>
             )}
         </Container>

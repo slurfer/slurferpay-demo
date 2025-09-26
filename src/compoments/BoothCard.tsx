@@ -1,4 +1,5 @@
 import { blue } from '@mui/material/colors';
+import { useNavigate } from 'react-router-dom';
 export default function BoothCard({
     name,
     link,
@@ -6,6 +7,7 @@ export default function BoothCard({
     name: string;
     link: string;
 }) {
+    const nav = useNavigate();
     return (
         <div
             key={link}
@@ -22,6 +24,7 @@ export default function BoothCard({
                 textAlign: 'center',
                 cursor: 'pointer',
             }}
+            onClick={() => nav(`/booth/${link}`)}
         >
             {name}
         </div>

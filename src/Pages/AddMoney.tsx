@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Container, Grid, Typography } from '@mui/material';
 import ChangeMoneyAmount from './ChangeMoneyAmount';
+import BackButton from '../compoments/BackButton';
 
 interface IProps {
     mode: 'add' | 'subs';
@@ -23,17 +24,7 @@ export default function AddMoney({ mode }: IProps) {
         />
     ) : (
         <Container maxWidth="sm">
-            <Button
-                style={{ position: 'absolute', top: 16, right: 16 }}
-                onClick={() =>
-                    window.history.state &&
-                    window.history.state.idx > 0
-                        ? nav(-1)
-                        : nav('/', { replace: true })
-                }
-            >
-                Back
-            </Button>
+            <BackButton />
             <div
                 style={{
                     display: 'flex',
