@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { Sensors } from '@mui/icons-material';
 import { blue } from '@mui/material/colors';
-import BackButton from '../compoments/BackButton';
+import BackButton from '../components/BackButton';
 
 export default function InitCard() {
     const [scanning, setScanning] = useState(false);
@@ -92,17 +92,7 @@ export default function InitCard() {
                             Init card
                         </Button>
                     </div>
-                    <Button
-                        style={{ position: 'absolute', bottom: 16 }}
-                        onClick={() =>
-                            window.history.state &&
-                            window.history.state.idx > 0
-                                ? nav(-1)
-                                : nav('/', { replace: true })
-                        }
-                    >
-                        Back
-                    </Button>
+                    <BackButton />
                 </>
             )}
         </Container>

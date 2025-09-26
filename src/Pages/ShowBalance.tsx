@@ -4,7 +4,7 @@ import { decodeNfcRecord, readNfc } from '../Utils/nfc';
 import { Avatar, Button, Container, Typography } from '@mui/material';
 import { Sensors } from '@mui/icons-material';
 import { blue } from '@mui/material/colors';
-import BackButton from '../compoments/BackButton';
+import BackButton from '../components/BackButton';
 
 export default function ShowBalance() {
     const [scanned, setScanned] = useState(false);

@@ -2,8 +2,8 @@ import React from 'react';
 import { Container } from '@mui/system';
 import config from '../config/booths.json';
 import { Booth } from '../types/BoothTypes';
-import BoothCard from '../compoments/BoothCard';
-import ItemButton from '../compoments/ItemButton';
+import BoothCard from '../components/BoothCard';
+import ItemButton from '../components/ItemButton';
 
 export default function Home() {
     const booths: Booth[] = config.booths;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Container, Grid, Typography } from '@mui/material';
 import ChangeMoneyAmount from './ChangeMoneyAmount';
-import BackButton from '../compoments/BackButton';
+import BackButton from '../components/BackButton';
 
 interface IProps {
     mode: 'add' | 'subs';

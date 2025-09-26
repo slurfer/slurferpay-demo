@@ -2,8 +2,8 @@ import { Container } from '@mui/system';
 import { useNavigate, useParams } from 'react-router-dom';
 import config from '../config/booths.json';
 import type { Booth } from '../types/BoothTypes';
-import ItemButton from '../compoments/ItemButton';
-import BackButton from '../compoments/BackButton';
+import ItemButton from '../components/ItemButton';
+import BackButton from '../components/BackButton';
 
 export default function BoothPage() {
     const nav = useNavigate();
