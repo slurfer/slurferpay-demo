@@ -3,9 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddMoney from './Pages/AddMoney';
 import Home from './Pages/Home';
 import InitCard from './Pages/InitCard';
-import Read from './Pages/Read';
 import ShowBalance from './Pages/ShowBalance';
-import Write from './Pages/Write';
 
 function App() {
     return (
@@ -13,8 +11,6 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/read" element={<Read />} />
-                    <Route path="/write" element={<Write />} />
                     <Route
                         path="/showBalance"
                         element={<ShowBalance />}

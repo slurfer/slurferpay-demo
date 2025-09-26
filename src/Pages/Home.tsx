@@ -65,28 +65,6 @@ export default function Home() {
                     width: '100%',
                     height: 64,
                 }}
-                onClick={() => nav('/read')}
-            >
-                Read
-            </div>
-            <br />
-            <div
-                style={{
-                    backgroundColor: 'red',
-                    width: '100%',
-                    height: 64,
-                }}
-                onClick={() => nav('/write')}
-            >
-                Write
-            </div>
-            <br />
-            <div
-                style={{
-                    backgroundColor: 'red',
-                    width: '100%',
-                    height: 64,
-                }}
                 onClick={() => nav('/showBalance')}
             >
                 Show balance
