@@ -44,7 +44,7 @@ export default function BoothPage() {
                 <ItemButton
                     key={item.name}
                     name={`${item.name}`}
-                    onClick={() => transactionClick}
+                    onClick={() => transactionClick(item.price)}
                     type="add"
                 />
             ))}
